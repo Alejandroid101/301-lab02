@@ -16,7 +16,7 @@ $(function(){
     }
   }
 
-  $.get('/data/page-1.json', (data) => {
+  $.get('data/page-1.json', (data) => {
     data.forEach((el) => {
       new Animal(el);
     });
