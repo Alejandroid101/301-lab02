@@ -12,16 +12,16 @@ $(function(){
   }
 
   $.get('/data/page-1.json', (data) => {
-    // console.log(data);
     data.forEach((el) => {
       new Animal(el);
     });
 
-    console.log(horns);
-
-    horns.forEach((horn) => {
-      $('section h2').text(horn.title);
-      $('section img[src=""]').attr(horn.image);
+    horns.forEach((horn, index) => {
+      const hornId = `horn-${index}`;
+      $('main').append(`<section id="${hornId}"></section>`);
+      $(`#${hornId}`).append(`<h2>${horn.title}</h2>`);
+      $(`#${hornId}`).append(`<img src="${horn.image}" alt="${horn.description}" width="250px" height="250px">`);
+      $(`#${hornId}`).append(`<p>${horn.description}</p>`);
     });
   });
 });
