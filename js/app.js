@@ -18,5 +18,10 @@ $(function(){
     });
 
     console.log(horns);
+
+    horns.forEach((horn) => {
+      $('section h2').text(horn.title);
+      $('section img[src=""]').attr(horn.image);
+    });
   });
 });
