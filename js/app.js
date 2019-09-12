@@ -30,16 +30,27 @@ $(function(){
     return;
   }
 
-  let source = document.getElementById('photo-template').innerHTML;
-  let template = Handlebars.compile(source);
-
   $.get(dataPath, (data) => {
     data.forEach((el) => {
       new Animal(el);
     });
 
-    console.log(data[0]);
-  
+    horns.forEach((horn) => {
+      // const source = document.getElementById('horn-tags').innerHTML;
+      const source = $('#horn-tags').html();
+
+      console.log(source);
+
+      const template = Handlebars.compile(source);
+      const html = template(horn);
+
+      console.log(html);
+
+      $('#horn-tags').html(html);
+
+      // document.getElementById('horn-tags').appendChild(node);
+    });
+
     // horns.forEach((horn, index) => {
     //   const hornId = `horn-${index}`;
     //   $('main').append(`<section id="${hornId}"></section>`);
