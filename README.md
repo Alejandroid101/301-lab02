@@ -48,11 +48,11 @@ Number and name of feature: Pagination
 
 Estimate of time needed to complete: 1:00 hours
 
-Start time: _____
+Start time: 9:00am
 
-Finish time: _____
+Finish time: 10:00am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1:00 hours
 
 #### Feature 2
 
