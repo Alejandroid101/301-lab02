@@ -1,8 +1,43 @@
 
-$(function(){
-  const horns = [];
-  // const keywords = [];
+$(function() {
+  /**
+   * JQUERY GLOBAL VARIABLES
+   */
 
+  // Render HTML variables
+  const horns = [];
+  const keywords = [];
+
+  // Datastore variables
+  const dataPath = './data/page-1.json';
+
+  /**
+   * DATASTORE
+   */
+
+  // Get data over AJAX
+  $.get(dataPath, (rawHorns) => {
+    // Normalize raw data
+    rawHorns.forEach((rawHorn) => {
+      new Horn(rawHorn);
+    });
+
+    // Render page load HTML
+    renderSelectOptions(keywords);
+    renderPhotosByKeyword('default');
+
+    // Turn on page event listeners
+    selectOptionsEventListener();
+  });
+
+  /**
+   * DATA CONSTRUCTORS
+   */
+
+  /**
+   * Horn data constructor
+   * @param {Object} rawHorn
+   */
   function Horn(rawHorn) {
     this.description = rawHorn.description;
     this.horns = rawHorn.horns;
@@ -12,31 +47,58 @@ $(function(){
 
     horns.push(this);
 
-    // if (!keywords.includes(rawHorn.keyword)) {
-    //   keywords.push(rawHorn.keyword);
-    // }
+    if (!keywords.includes(rawHorn.keyword)) {
+      keywords.push(rawHorn.keyword);
+    }
   }
 
-  const dataPath = './data/page-1.json';
+  /**
+   * EVENT LISTENERS
+   */
 
-  $.get(dataPath, (rawHorns) => {
-    rawHorns.forEach((rawHorn) => {
-      new Horn(rawHorn);
+  function selectOptionsEventListener() {
+    $('select').on('change', function() {
+      // Get horn animal keyword to filter by
+      const keyword = this.value;
+
+      // Render horn animal photos by keyword filter
+      renderPhotosByKeyword(keyword);
     });
+  }
 
-    horns.forEach(horn => {
-      // Create new tag from template
-      $('main').append('<section class="photo-template"></section>');
+  /**
+   * RENDER HTML
+   */
 
-      // Fill new tag
-      $('main').last().append(`<h2>${horn.title}</h2>`);
-      $('main').last().append(`<img src="${horn.image}" alt="${horn.description}" width="250px" height="250px">`);
-      $('main').last().append(`<p>${horn.description}</p>`);
-      $('main').last().append('<br>')
+  /**
+   * Render distinct horn animal keyword filter select options
+   * @param {Array} optionNames
+   */
+  function renderSelectOptions(optionNames) {
+    optionNames.forEach(optionName => {
+      // Render select option
+      $('select').append(`<option value="${optionName}">${optionName}</option>`);
     });
+  }
 
-    // keywords.forEach(keyword => {
-    //   $('select').append(`<option value="${keyword}">${keyword}</option>`)
-    // });
-  });
+  /**
+   * Render horn animal photos through a keyword filter
+   * @param {String} keywordFilter
+   */
+  function renderPhotosByKeyword(keywordFilter) {
+    // Remove .photo-template sections from DOM
+    $('.photo-template').remove();
+
+    horns.forEach((horn, index) => {
+      if (keywordFilter === 'default' || keywordFilter === horn.keyword) {
+        // Create new tag from template
+        $('main').append(`<section class="photo-template" name="horn-${index}"></section>`);
+
+        // Fill new tag
+        $(`section[name="horn-${index}"]`).append(`<h2>${horn.title}</h2>`);
+        $(`section[name="horn-${index}"]`).append(`<img src="${horn.image}" alt="${horn.description}" width="250px" height="250px">`);
+        $(`section[name="horn-${index}"]`).append(`<p>${horn.description}</p>`);
+      }
+    });
+  }
 });

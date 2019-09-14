@@ -27,10 +27,12 @@ Start time: Wed 9/11/19 1:00pm
 
 Wed 9/11/19
   1:00pm - 1:30pm
+Sat 9/14/19
+  1:30pm - 3:00pmm
 
-Finish time: XXX
+Finish time: Sat 9/14/19 3:00pm
 
-Actual time needed to complete: XXX
+Actual time needed to complete: 2:00 hours
 
 ### Feature 3
 
