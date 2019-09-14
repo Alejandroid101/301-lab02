@@ -16,7 +16,21 @@ $(function(){
     }
   }
 
-  $.get('/data/page-1.json', (data) => {
+  const pathname = window.location.pathname;
+  let dataPath = '';
+
+  switch (pathname) {
+  case '/pages/one.html':
+    dataPath = '../data/page-1.json';
+    break;
+  case '/pages/two.html':
+    dataPath = '../data/page-2.json';
+    break;
+  default:
+    return;
+  }
+
+  $.get(dataPath, (data) => {
     data.forEach((el) => {
       new Animal(el);
     });
