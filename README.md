@@ -8,33 +8,31 @@ Number and name of feature: Display images
 
 Estimate of time needed to complete: 1:00 hours
 
-Start time:
+Start time: Wed 9/11/19 9:30am
 
-9/11/19
+Wed 9/11/19
   9:30am - 12:00pm
 
-Finish time: 12:00pm
+Finish time: Wed 9/11/19 12:00pm
 
 Actual time needed to complete: 2:30 hours
 
-#### Feature 2
+### Feature 2
 
 Number and name of feature: Filter images
 
 Estimate of time needed to complete: 1:00 hour
 
-Start time:
+Start time: Wed 9/11/19 1:00pm
 
-9/12/19
+Wed 9/11/19
   1:00pm - 1:30pm
-9/14/19
-  11:00am - 
 
 Finish time: XXX
 
 Actual time needed to complete: XXX
 
-#### Feature 3
+### Feature 3
 
 Number and name of feature: Style the application
 
@@ -52,12 +50,12 @@ Number and name of feature: Pagination
 
 Estimate of time needed to complete: 1:00 hours
 
-Start time:
+Start time: Thu 9/12/19 9:00am
 
-9/12/19
+Thu 9/12/19
   9:00am - 10:00am
 
-Finish time: 10:00am
+Finish time: Thu 9/12/19 10:00am
 
 Actual time needed to complete: 1:00 hours
 
