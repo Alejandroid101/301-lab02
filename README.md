@@ -2,90 +2,95 @@
 
 ## Time estimates
 
-### Wednesday 9/11/19
+### Feature 1
 
-#### Feature 1
-
-Number and name of feature: feature 1
+Number and name of feature: Display images
 
 Estimate of time needed to complete: 1:00 hours
 
-Start time: 9:30am
+Start time: Wed 9/11/19 9:30am
 
-Finish time: 12:00pm
+Wed 9/11/19
+  9:30am - 12:00pm
+
+Finish time: Wed 9/11/19 12:00pm
 
 Actual time needed to complete: 2:30 hours
 
-#### Feature 2
+### Feature 2
 
-Number and name of feature: feature 2
-
-Estimate of time needed to complete: 1:00 hour
-
-Start time: 1:00pm (end 1:30pm)
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-#### Feature 3
-
-Number and name of feature: feature 3
+Number and name of feature: Filter images
 
 Estimate of time needed to complete: 1:00 hour
 
-Start time: _____
+Start time: Wed 9/11/19 1:00pm
 
-Finish time: _____
+Wed 9/11/19
+  1:00pm - 1:30pm
 
-Actual time needed to complete: _____
+Finish time: XXX
 
-### Thursday 9/12/19
+Actual time needed to complete: XXX
 
-#### Feature 1
+### Feature 3
+
+Number and name of feature: Style the application
+
+Estimate of time needed to complete: XXX
+
+Start time: XXX
+
+Finish time: XXX
+
+Actual time needed to complete: XXX
+
+### Feature 1
 
 Number and name of feature: Pagination
 
 Estimate of time needed to complete: 1:00 hours
 
-Start time: 9:00am
+Start time: Thu 9/12/19 9:00am
 
-Finish time: 10:00am
+Thu 9/12/19
+  9:00am - 10:00am
+
+Finish time: Thu 9/12/19 10:00am
 
 Actual time needed to complete: 1:00 hours
 
-#### Feature 2
+### Feature 2
 
 Number and name of feature: Templating
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: XXX
 
-Start time: _____
+Start time: XXX
 
-Finish time: _____
+Finish time: XXX
 
-Actual time needed to complete: _____
+Actual time needed to complete: XXX
 
-#### Feature 3
+### Feature 3
 
 Number and name of feature: Styling with Flexbox
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: XXX
 
-Start time: _____
+Start time: XXX
 
-Finish time: _____
+Finish time: XXX
 
-Actual time needed to complete: _____
+Actual time needed to complete: XXX
 
-#### Feature 4
+### Feature 4
 
 Number and name of feature: Sort the images
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: XXX
 
-Start time: _____
+Start time: XXX
 
-Finish time: _____
+Finish time: XXX
 
-Actual time needed to complete: _____
+Actual time needed to complete: XXX
