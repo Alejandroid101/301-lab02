@@ -5,30 +5,63 @@ $(function() {
    */
 
   // Render HTML variables
-  const horns = [];
-  const keywords = [];
+  let horns = [];
+  let keywords = [];
 
-  // Datastore variables
-  const dataPath = './data/page-1.json';
+  /**
+   * EVENT LISTENERS
+   */
+
+  /**
+   * Pagination page 1
+   */
+  $('#page-1').on('click', () => {
+    // Reset global data
+    horns = [];
+    keywords = [];
+
+    render(1);
+  });
+
+  /**
+   * Pagination page 1
+   */
+  $('#page-2').on('click', () => {
+    // Reset global data
+    horns = [];
+    keywords = [];
+
+    render(2);
+  });
+
+  /**
+   * Select keyword
+   */
+  $('select').on('change', function() {
+    // Get horn animal keyword to filter by
+    const keyword = this.value;
+
+    // Render horn animal photos by keyword filter
+    renderImagesByKeyword(keyword);
+  });
 
   /**
    * DATASTORE
    */
 
-  // Get data over AJAX
-  $.get(dataPath, (rawHorns) => {
-    // Normalize raw data
-    rawHorns.forEach((rawHorn) => {
-      new Horn(rawHorn);
+  function getData(dataPath) {
+    // Get data over AJAX
+    $.get(dataPath, (rawHorns) => {
+      // Normalize raw data
+      rawHorns.forEach((rawHorn) => {
+        new Horn(rawHorn);
+      });
+
+      // Render page load HTML
+      renderSelect(keywords);
+      renderImagesByKeyword('default');
     });
-
-    // Render page load HTML
-    renderSelectOptions(keywords);
-    renderPhotosByKeyword('default');
-
-    // Turn on page event listeners
-    selectOptionsEventListener();
-  });
+  }
 
   /**
    * DATA CONSTRUCTORS
@@ -53,31 +86,37 @@ $(function() {
   }
 
   /**
-   * EVENT LISTENERS
-   */
-
-  function selectOptionsEventListener() {
-    $('select').on('change', function() {
-      // Get horn animal keyword to filter by
-      const keyword = this.value;
-
-      // Render horn animal photos by keyword filter
-      renderPhotosByKeyword(keyword);
-    });
-  }
-
-  /**
    * RENDER HTML
    */
+
+  function render(pageNum) {
+    let dataPath = '';
+
+    switch (pageNum) {
+    case 1:
+      dataPath = `./data/page-${pageNum}.json`;
+      break;
+    case 2:
+      dataPath = `./data/page-${pageNum}.json`;
+      break;
+    default:
+      break;
+    }
+
+    getData(dataPath);
+  }
 
   /**
    * Render distinct horn animal keyword filter select options
    * @param {Array} optionNames
    */
-  function renderSelectOptions(optionNames) {
+  function renderSelect(optionNames) {
+    // Reset select
+    $('.keyword').remove();
+
     optionNames.forEach(optionName => {
-      // Render select option
-      $('select').append(`<option value="${optionName}">${optionName}</option>`);
+      // Append option to select
+      $('select').append(`<option class="keyword" value="${optionName}">${optionName}</option>`);
     });
   }
 
@@ -85,8 +124,8 @@ $(function() {
    * Render horn animal photos through a keyword filter
    * @param {String} keywordFilter
    */
-  function renderPhotosByKeyword(keywordFilter) {
-    // Remove .photo-template sections from DOM
+  function renderImagesByKeyword(keywordFilter) {
+    // Reset images
     $('.photo-template').remove();
 
     horns.forEach((horn, index) => {
