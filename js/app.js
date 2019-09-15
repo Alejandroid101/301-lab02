@@ -7,6 +7,8 @@ $(function() {
   // Render HTML variables
   let horns = [];
   let keywords = [];
+  let selectKeyword = '';
+  let selectSort = 'title';
 
   /**
    * EVENT LISTENERS
@@ -37,13 +39,24 @@ $(function() {
   /**
    * Select keyword
    */
-  $('select').on('change', function() {
+  $('#filter').on('change', function() {
     // Get horn animal keyword to filter by
-    const keyword = this.value;
+    selectKeyword = this.value;
 
     // Render horn animal photos by keyword filter
-    renderImagesByKeyword(keyword);
+    renderImagesByKeywordAndSort(selectKeyword, selectSort);
   });
+
+  /**
+   * Select sort
+   */
+  $('#sort').on('change', function() {
+    // Get sort option
+    selectSort = this.value;
+
+    // Render horn animal photos by sort order
+    renderImagesByKeywordAndSort(selectKeyword, selectSort);
+  })
 
   /**
    * DATASTORE
@@ -59,7 +72,7 @@ $(function() {
 
       // Render page load HTML
       renderSelect(keywords);
-      renderImagesByKeyword('default');
+      renderImagesByKeywordAndSort('default', selectSort);
     });
   }
 
@@ -116,17 +129,34 @@ $(function() {
 
     optionNames.forEach(optionName => {
       // Append option to select
-      $('select').append(`<option class="keyword" value="${optionName}">${optionName}</option>`);
+      $('#filter').append(`<option class="keyword" value="${optionName}">${optionName}</option>`);
     });
   }
 
   /**
    * Render horn animal photos through a keyword filter
    * @param {String} keywordFilter
+   * @param {String} sortOrder
    */
-  function renderImagesByKeyword(keywordFilter) {
+  function renderImagesByKeywordAndSort(keywordFilter, sortOrder) {
     // Reset images
     $('.photo-template').remove();
+
+    // Sort array by sortOrder before walking array
+    switch (sortOrder) {
+    case 'title':
+      horns.sort((a, b) => {
+        return a.title < b.title ? -1 : 1;
+      });
+      break;
+    case 'horn-count':
+      horns.sort((a, b) => {
+        return a.horns < b.horns ? -1 : 1;
+      });
+      break;
+    default:
+      break;
+    }
 
     horns.forEach((horn, index) => {
       if (keywordFilter === 'default' || keywordFilter === horn.keyword) {

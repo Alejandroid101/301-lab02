@@ -91,10 +91,13 @@ Actual time needed to complete: XXX
 
 Number and name of feature: Sort the images
 
-Estimate of time needed to complete: XXX
+Estimate of time needed to complete: 1:00 hours
 
-Start time: XXX
+Start time: Sat 9/14/19 6:00pm
 
-Finish time: XXX
+Sat 9/14/19
+  6:00pm - 6:30pm
 
-Actual time needed to complete: XXX
+Finish time: Sat 9/14/19 6:30pm
+
+Actual time needed to complete: 0:30 hours
