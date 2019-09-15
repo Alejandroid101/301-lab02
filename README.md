@@ -56,10 +56,12 @@ Start time: Thu 9/12/19 9:00am
 
 Thu 9/12/19
   9:00am - 10:00am
+Sat 9/14/19
+  3:30pm - 6:00pm
 
-Finish time: Thu 9/12/19 10:00am
+Finish time: Sat 9/14/19 6:00pm
 
-Actual time needed to complete: 1:00 hours
+Actual time needed to complete: 3:30 hours
 
 ### Feature 2
 
