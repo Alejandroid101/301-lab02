@@ -67,13 +67,16 @@ Actual time needed to complete: 3:30 hours
 
 Number and name of feature: Templating
 
-Estimate of time needed to complete: XXX
+Estimate of time needed to complete: 1:00 hours
 
-Start time: XXX
+Start time: Sun 9/15/19 7:30pm
 
-Finish time: XXX
+Sun 9/15/19
+  7:30pm - 9:00pm
 
-Actual time needed to complete: XXX
+Finish time: Sun 9/15/19 9:00pm
+
+Actual time needed to complete: 1:30 hours
 
 ### Feature 3
 
