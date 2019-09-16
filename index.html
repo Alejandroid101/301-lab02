@@ -21,7 +21,9 @@
         </ul>
       </nav>
       <select id="filter">
-        <option value="default">Filter by Keyword</option>
+        <script id="filter-template" type="text/x-handlebars-template">
+          <option class="keyword" value="{{valName}}">{{optName}}</option>
+        </script>
       </select>
       <select id="sort">
         <option value="title">Title</option>
@@ -29,16 +31,19 @@
       </select>
     </header>
     <main>
-      <section id="photo-template">
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
-      </section>
+      <script id="photo-template" type="text/x-handlebars-template">
+        <section class="photo-template">
+          <h1>{{title}}</h1>
+          <img src="{{image}}" alt="{{description}}" width="250px" height="250px">
+          <p>{{description}}</p>
+        </section>
+      </script>
     </main>
     <footer>
       &copy; 2018 Code Fellows
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.2.0/handlebars.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
   </body>
 </html>

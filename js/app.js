@@ -127,9 +127,23 @@ $(function() {
     // Reset select
     $('.keyword').remove();
 
+    const source = document.getElementById("filter-template").innerHTML;
+    const template = Handlebars.compile(source);
+    const name = {
+      valName: 'default',
+      optName: 'Filter by Keyword'
+    }
+    const html = template(name);
+    $('#filter').append(html);
+
     optionNames.forEach(optionName => {
       // Append option to select
-      $('#filter').append(`<option class="keyword" value="${optionName}">${optionName}</option>`);
+      const name = {
+        valName: optionName,
+        optName: optionName
+      };
+      const html = template(name);
+      $('#filter').append(html);
     });
   }
 
@@ -158,15 +172,13 @@ $(function() {
       break;
     }
 
-    horns.forEach((horn, index) => {
-      if (keywordFilter === 'default' || keywordFilter === horn.keyword) {
-        // Create new tag from template
-        $('main').append(`<section class="photo-template" name="horn-${index}"></section>`);
+    const source = document.getElementById("photo-template").innerHTML;
+    const template = Handlebars.compile(source);
 
-        // Fill new tag
-        $(`section[name="horn-${index}"]`).append(`<h2>${horn.title}</h2>`);
-        $(`section[name="horn-${index}"]`).append(`<img src="${horn.image}" alt="${horn.description}" width="250px" height="250px">`);
-        $(`section[name="horn-${index}"]`).append(`<p>${horn.description}</p>`);
+    horns.forEach(horn => {
+      if (keywordFilter === 'default' || keywordFilter === horn.keyword) {
+        const html = template(horn);
+        $('main').append(html);
       }
     });
   }
