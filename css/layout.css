@@ -1,0 +1,31 @@
+select{
+  margin-left: 15px;
+}
+
+header > h1{
+  margin-bottom: 30px;
+}
+
+/* select{
+
+} */
+
+.photo-template{
+  float: left;
+  border: 5px;
+  text-align: center;
+  width: 300px;
+  height: 320px;
+  margin: 7px;
+}
+
+nav{
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer{
+  clear: both;
+}

@@ -1,0 +1,30 @@
+header > h1{
+  /* font-family: 'Montserrat', sans-serif; */
+  font-size: 3em;
+  text-align: center;
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background-color: lightblue;
+}
+
+li{
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  /* font-size: 2em; */
+  float: left;
+  margin-left: 15px;
+}
+
+p{
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.photo-template{
+  border-color: dimgrey;
+  border-style: solid;
+}
